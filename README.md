@@ -3,6 +3,8 @@ LIRI will be a command line node app that takes in parameters and gives you back
 
    * `spotify-this-song`
 
+![Alt text](/Users/teenz/liri-node-app/Screenshots/Screen Shot 2019-01-04 at 6.27.26 PM.png?raw=true)
+
    * `movie-this`
 
    * `concert-this`
