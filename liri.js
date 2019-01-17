@@ -5,8 +5,6 @@ var keys = require("./keys");
 var request = require("request");
 var fs = require("fs");
 var dateFormat = require("dateFormat");
-// var moment = require ('moment');
-// moment().format();
 var inquirer = require("inquirer");
 // var concert = require('bandsintown-events');
 
@@ -15,7 +13,6 @@ var spotifyApi = new Spotify(keys.spotify);
 var command1 = process.argv[2];
 var command2 = process.argv[3];
 
-// function runAction(command1, command2) {
 switch (command1) {
     // use spotify api
     case "spotify-this-song":
@@ -76,7 +73,6 @@ function movie() {
 function concert() {
     var location = ""
     var queryURL = "https://rest.bandsintown.com/artists/" + command2 + "/events?app_id=e7698ddd959431609007fd04406b8322"
-    // e7698ddd959431609007fd04406b8322
     request(queryURL, function (error, response, body) {
         if (!error && response.statusCode === 200) {
 
@@ -100,12 +96,9 @@ function concert() {
 
 function what() {
 
-
-    // Running the readFile module that's inside of fs.
     // Stores the read information into the variable "data"
     fs.readFile("random.txt", "utf8", function (error, data) {
-        // if (!error) {
-        //     console.log(error);
+
         var dataArr = data.split(",");
 
         command1 = dataArr[0];
@@ -121,30 +114,6 @@ function what() {
             concert(command2);
         }
    
-
-        
-
-
-    //  console.log(data);
-
-
-        // spotify(dataArr[0], dataArr[1]);
-
-        //     // console.log(dataArr[0], dataArr[1]);
-
-        //    if (dataArr[0] === "spotify-this-song") {
-        //        var song = dataArr[1].slice(1, -1);
-        //        spotify(song);
-        //    } else if (dataArr[0] === "movie-this") {
-        //        var movies = dataArr[1].slice(1, -1);
-        //        movie(movies);
-        //    } else if (dataArr[0] === "concert-this") {
-        //        var show = dataArr[1].slice(1, -1);
-        //        concert(show);
-
-
-    
-
 });
 }
 
